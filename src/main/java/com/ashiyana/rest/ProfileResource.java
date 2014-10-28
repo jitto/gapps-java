@@ -8,8 +8,11 @@ import java.util.ArrayList;
 @Path("/profile")
 public class ProfileResource {
     @GET
-    @Produces("text/plain")
+    @Produces("application/json")
     public String getMany() {
-        return "Hello there";
+        Profile newProfile = new Profile();
+        newProfile.name = "test";
+        return Collections.singletonList(newProfile);
     }
-}
+
+}
